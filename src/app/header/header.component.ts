@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,15 +6,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  @Output() recipeIsShown = new EventEmitter<boolean>();
-
   collapsed = true;
-
-  onShowRecipe(recipeShown: boolean) {
-    this.recipeIsShown.emit(recipeShown);
-  }
-
-  onShowShoppingList(recipeShown: boolean) {
-    this.recipeIsShown.emit(recipeShown);
-  }
 }
