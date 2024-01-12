@@ -9,22 +9,22 @@ import { Subject } from 'rxjs';
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  // private recipes: Recipe[] = [
-  //   new Recipe(
-  //     'Schnitzel Mniam',
-  //     'Put some food on a pan',
-  //     'https://media.gettyimages.com/id/1081422898/photo/pan-fried-duck.jpg?s=612x612&w=0&k=20&c=kzlrX7KJivvufQx9mLd-gMiMHR6lC2cgX009k9XO6VA=',
-  //     [new Ingredient('Meat', 1), new Ingredient('French Fries', 35)]
-  //   ),
-  //   new Recipe(
-  //     'A dummy Burger',
-  //     'Put whisky to the chocolate cream',
-  //     'https://media.gettyimages.com/id/1081422898/photo/pan-fried-duck.jpg?s=612x612&w=0&k=20&c=kzlrX7KJivvufQx9mLd-gMiMHR6lC2cgX009k9XO6VA=',
-  //     [new Ingredient('Beef Meat', 1), new Ingredient('Rools', 2)]
-  //   ),
-  // ];
+  private recipes: Recipe[] = [
+    new Recipe(
+      'Schnitzel Mniam',
+      'Put some food on a pan',
+      'https://media.gettyimages.com/id/1081422898/photo/pan-fried-duck.jpg?s=612x612&w=0&k=20&c=kzlrX7KJivvufQx9mLd-gMiMHR6lC2cgX009k9XO6VA=',
+      [new Ingredient('Meat', 1), new Ingredient('French Fries', 35)]
+    ),
+    new Recipe(
+      'A dummy Burger',
+      'Put whisky to the chocolate cream',
+      'https://media.gettyimages.com/id/1081422898/photo/pan-fried-duck.jpg?s=612x612&w=0&k=20&c=kzlrX7KJivvufQx9mLd-gMiMHR6lC2cgX009k9XO6VA=',
+      [new Ingredient('Beef Meat', 1), new Ingredient('Rools', 2)]
+    ),
+  ];
 
-  private recipes: Recipe[] = [];
+  // private recipes: Recipe[] = [];
 
   constructor(private sLService: ShoppingListService) {}
 
