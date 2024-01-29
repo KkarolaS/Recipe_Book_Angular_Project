@@ -11,6 +11,7 @@ export class AuthComponent implements OnInit {
   isLoggingMode = false;
   logForm: FormGroup;
   isLogging = false;
+  error: string = null;
 
   constructor(private authService: AuthService) {}
 
@@ -41,7 +42,9 @@ export class AuthComponent implements OnInit {
           this.isLogging = false;
         },
         (error) => {
-          console.error(error);
+          console.log(error);
+
+          this.error = error;
           this.isLogging = false;
         }
       );
