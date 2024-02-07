@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthResponseData, AuthService } from './auth.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -14,7 +15,7 @@ export class AuthComponent implements OnInit {
   isLogging = false;
   error: string = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSwitchMode() {
     this.isLoggingMode = !this.isLoggingMode;
@@ -47,6 +48,7 @@ export class AuthComponent implements OnInit {
       (resData) => {
         console.log(resData);
         this.isLogging = false;
+        this.router.navigate(['/recipes']);
       },
       (error) => {
         console.log(error);

@@ -8,7 +8,7 @@
       >
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
-      <a routerLink="" class="navbar-brand">Recipe Book</a>
+      <a class="navbar-brand">Recipe Book</a>
     </div>
     <div
       class="navbar-collapse"
@@ -19,12 +19,14 @@
         <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          *ngIf="isAuthanticated"
         >
           <a routerLink="/recipes">Recipes</a>
         </li>
         <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          *ngIf="!isAuthanticated"
         >
           <a routerLink="/auth">Authenticate</a>
         </li>
@@ -36,8 +38,14 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a style="cursor: pointer" *ngIf="isAuthanticated">Logout </a></li>
         <li class="dropdown" appDropdown>
-          <a style="cursor: pointer" class="dropdown-toggle" role="button">
+          <a
+            style="cursor: pointer"
+            class="dropdown-toggle"
+            role="button"
+            *ngIf="isAuthanticated"
+          >
             Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
